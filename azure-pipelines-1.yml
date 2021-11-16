@@ -6,6 +6,9 @@
 trigger:
 - master
 
+pool:
+  Default
+
 steps:
 - checkout: none
 
