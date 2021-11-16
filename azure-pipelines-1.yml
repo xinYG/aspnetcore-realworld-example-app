@@ -42,3 +42,4 @@ steps:
 - task: WhiteSource@21
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
+    configuration: 'checkPolicies=true'
