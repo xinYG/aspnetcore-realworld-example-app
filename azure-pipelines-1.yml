@@ -42,4 +42,6 @@ steps:
 - task: WhiteSource@21
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
-    configuration: 'checkPolicies=true'
+    configuration: |
+      forceCheckAllDependencies=true
+      checkPolicies=true
