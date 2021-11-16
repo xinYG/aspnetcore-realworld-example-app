@@ -7,21 +7,12 @@ trigger:
 - master
 
 
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+- checkout: none
 
 - task: CmdLine@2
   inputs:
-    script: 'curl -LJ -o $(System.DefaultWorkingDirectory)/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz'
+    script: 'curl -LJ -o $(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip https://downloads.whitesourcesoftware.com/ws-cli/jre/OpenJDK8_jre_x64_windows.zip'
 
 
 - task: JavaToolInstaller@0
@@ -29,7 +20,7 @@ steps:
     versionSpec: '8'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'LocalDirectory'
-    jdkFile: '$(System.DefaultWorkingDirectory)/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz'
+    jdkFile: '$(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip'
     jdkDestinationDirectory: '$(System.DefaultWorkingDirectory)/jre'
     cleanDestinationDirectory: true
 
