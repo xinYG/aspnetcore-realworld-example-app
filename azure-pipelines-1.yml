@@ -22,7 +22,7 @@ steps:
     versionSpec: '8'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'LocalDirectory'
-    jdkFile: '(System.DefaultWorkingDirectory)/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz'
+    jdkFile: '$(System.DefaultWorkingDirectory)/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz'
     jdkDestinationDirectory: '$(System.DefaultWorkingDirectory)/jre'
     cleanDestinationDirectory: true
 
