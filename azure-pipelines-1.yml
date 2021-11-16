@@ -24,6 +24,14 @@ steps:
     jdkDestinationDirectory: '$(System.DefaultWorkingDirectory)/jre'
     cleanDestinationDirectory: true
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      git clone https://github.com/xinYG/aspnetcore-realworld-example-app.git
+      cd aspnetcore-realworld-example-app
+      git checkout 93ed4ba61b600509b62ace9cf57d3c7ccb9f2c96
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
