@@ -12,19 +12,19 @@ pool:
 steps:
 - checkout: none
 
-# - task: CmdLine@2
-#   inputs:
-#     script: 'curl -LJ -o $(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip https://downloads.whitesourcesoftware.com/ws-cli/jre/OpenJDK8_jre_x64_windows.zip'
+- task: CmdLine@2
+  inputs:
+    script: 'curl -LJ -o $(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip https://downloads.whitesourcesoftware.com/ws-cli/jre/OpenJDK8_jre_x64_windows.zip'
 
 
-# - task: JavaToolInstaller@0
-#   inputs:
-#     versionSpec: '8'
-#     jdkArchitectureOption: 'x64'
-#     jdkSourceOption: 'LocalDirectory'
-#     jdkFile: '$(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip'
-#     jdkDestinationDirectory: '$(System.DefaultWorkingDirectory)/jre'
-#     cleanDestinationDirectory: true
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '$(System.DefaultWorkingDirectory)/OpenJDK8_jre_x64_windows.zip'
+    jdkDestinationDirectory: '$(System.DefaultWorkingDirectory)/jre'
+    cleanDestinationDirectory: true
 
 - task: PowerShell@2
   inputs:
