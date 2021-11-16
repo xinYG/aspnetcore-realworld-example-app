@@ -43,5 +43,5 @@ steps:
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
     configuration: |
-      forceCheckAllDependencies=true
+      # forceCheckAllDependencies=true
       checkPolicies=true
